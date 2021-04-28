@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+<p>
+    Are you sure, this contvar is useless to remove "{{ obj.contvar }}"?
+</p>
+
+<form action="/delete_data/{{obj.id}}" method="POST">
+    {% csrf_token%}
+    <a href="{% url 'display_wpd' %}" class="btn btn-primary btn-md btn-trim" role="button"> Cancel</a>
+    <input type="submit" name="Confirm">
+
+</form>
+{% endblock %}

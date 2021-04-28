@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>IT Entree</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" href="{% static '/css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+    <!-- script
+    ================================================== -->
+    <script src="/static/js/modernizr.js"></script>
+    <script src="/static/js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="static/css/fontawesome.css">
+    <link rel="stylesheet" href="static/css/entree-home.css">
+    <link rel="stylesheet" href="static/css/owl.css">
+    <link rel="stylesheet" href="static/css/lightbox.css">
+</head>
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+        {% if user.is_authenticated %}
+        <div class="header-logo">
+            <a class="site-logo" href="{% url 'login_home' %}">
+                <img src="{% static '/assets/it_entree_logo.png' %}" alt="Homepage">
+            </a>
+        </div> <!-- end header-logo -->
+        {% else %}
+
+        <div class="header-logo">
+            <a class="site-logo" href="{% url 'index' %}">
+                <img src="{% static '/assets/it_entree_logo.png' %}" alt="Homepage">
+            </a>
+        </div> <!-- end header-logo -->
+    {% endif %}
+
+    </header> <!-- end s-header -->
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-section="section1"
+             data-image-src="/static/assets/about_us_background.jpg"
+             data-natural-width=3000
+             data-natural-height=1000
+             data-position-y=top>
+
+        <div class="shadow-overlay"></div>
+        <div class="home-content">
+
+            <div class="row home-content__main">
+                <center><h3 style="color:White;">About Us</h3></center>
+                <h5 style="color:White;">
+                    <br>
+                In the changing world each of us desire and aspire to contribute towards sustainable growth. Among many growth blockers, one of the biggest contributor is unemployment.<br>
+                    <br>
+                    ITEntréè is here to make a small change for a bigger IMPACT. We are here to connect the dots between the employment providers and the employment seekers. We all know the struggle involved to get into a first job. Truth is 60% of 1.5M graduates do not get a chance, 20% of them do not get into a suitable job and let's not talk about how many find their dream job.<br>
+                    <br>
+                    ITEntréè believe in individual growth is the key to collective success. We spark the minds of young graduates to ignite creativity,logical and analytical thinking which help finding their dream job.<br>
+                    <br>
+                    Many recruiters step back to hire young graduates because of many challenging factors but young graduates need not worry. We at ITEntréè accept the challenge.
+                    <br>
+                    <br>
+                    We are a team of dedicated and quality people who share the same enthusiasm and dream of supporting, nurturing and helping young graduates until they find their desired job.
+                    <br>
+                    <br>
+                    Our mission is to reduce the void between the graduates and the recruiters.
+                </h5>
+
+            </div> <!-- end home-content__main -->
+
+        </div> <!-- end home-content -->
+        </div> <!-- end home-content -->
+
+    </section> <!-- end s-home -->
+
+
+<body>
+  <!--header-->
+
+
+  <!-- ***** Main Banner Area Start ***** -->
+
+    <br>
+
+</body>
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+    <footer class="footer bg-black small text-center text-white-50"><div class="container">2020 Copyright © IT Entréè Team</div></footer>
+    <script src="/static/js/scripts.js"></script>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Product Analytics</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" href="{% static '/css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+    <!-- script
+    ================================================== -->
+    <script src="/static/js/modernizr.js"></script>
+    <script src="/static/js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="static/css/fontawesome.css">
+    <link rel="stylesheet" href="static/css/entree-home.css">
+    <link rel="stylesheet" href="static/css/owl.css">
+    <link rel="stylesheet" href="static/css/lightbox.css">
+
+</head>
+
+<body id="top">
+    <!-- home
+    ================================================== -->
+        <!-- Login Home
+    ================================================== -->
+
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+    {% if user.is_authenticated %}
+        <div class="header-logo">
+            <a class="site-logo" href="{% url 'login_home' %}">
+                <img src="{% static '/assets/it_entree_logo.png' %}" alt="Homepage">
+            </a>
+        </div> <!-- end header-logo -->
+
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+            <div class="header-nav__content">
+                <h3> Menu </h3>
+
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll"  href="{% url 'login_home' %}" title="home">Home</a></li>
+                    <li><a class="nav-link"  href="{% url 'about_us' %}" title="about_us">About Us</a></li>
+                    <li><a class="nav-link"  href="#contact_us" title="contact_us">Contact Us</a></li>
+                </ul>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav> <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-icon"></span>
+        </a>
+   {% else %}
+
+    {% endif %}
+    </header> <!-- end s-header -->
+
+    {% if user.is_authenticated %}
+    <section
+
+		id="home" class="s-home target-section" data-parallax="scroll" data-image-src="/static/assets/login_home_page.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=top>
+
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+                <h1>
+                Hello {{user.first_name}}, <br>
+
+                </h1>
+                <p>
+                What you would like to do today, <br>
+                </p>
+
+            </div> <!-- end home-content__main -->
+
+        </div> <!-- end home-content -->
+
+        <ul class="home-sidelinks">
+            <!-- <li><a class="smoothscroll" href="#about">About<span>who we are</span></a></li> -->
+            <li><a class="nav-link" href="#courses">Courses<span>Happy Coding</span></a></li>
+            <li><a class="nav-link" href="#placements">Hiring<span>Explore and apply for your dream job</span></a></li>
+            <li><a class="nav-link" href="#self-evaluation">Self Evaluation<span>Test your skills</span></a></li>
+            <li><a  class="nav-link" href="/accounts/logout">Logout<span>Thank You</span></a></li>
+        </ul> <!-- end home-sidelinks -->
+
+    </section> <!-- end s-home -->
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script src="/static/js/main.js"></script>
+   {% else %}
+
+    {% endif %}
+</body>
+    <footer class="footer bg-black small text-center text-white-50"><div class="container">2020 Copyright © IT Entréè Team</div></footer>
+    <script src="/static/js/scripts.js"></script>
+</html>
